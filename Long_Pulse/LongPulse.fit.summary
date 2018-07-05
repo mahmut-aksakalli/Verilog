@@ -1,0 +1,12 @@
+Fitter Status : Successful - Wed Apr 19 21:10:14 2017
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : LongPulse
+Top-level Entity Name : LongPulse
+Family : Cyclone
+Device : EP1C3T144C8
+Timing Models : Final
+Total logic elements : 6 / 2,910 ( < 1 % )
+Total pins : 3 / 104 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 59,904 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )

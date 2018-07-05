@@ -1,0 +1,36 @@
+|Detector
+Clk => Count[0].CLK
+Clk => Count[1].CLK
+Clk => Count[2].CLK
+Clk => Count[3].CLK
+Clk => Count[4].CLK
+Clk => Count[5].CLK
+Clk => Count[6].CLK
+Clk => Count[7].CLK
+Clk => Buffer[0].CLK
+Clk => Buffer[1].CLK
+Clk => Buffer[2].CLK
+Clk => Buffer[3].CLK
+nReset => Count[0].ACLR
+nReset => Count[1].ACLR
+nReset => Count[2].ACLR
+nReset => Count[3].ACLR
+nReset => Count[4].ACLR
+nReset => Count[5].ACLR
+nReset => Count[6].ACLR
+nReset => Count[7].ACLR
+Sin => Buffer[0].DATAIN
+Pattern[0] => Equal0.IN3
+Pattern[1] => Equal0.IN2
+Pattern[2] => Equal0.IN1
+Pattern[3] => Equal0.IN0
+Pcount[0] <= Count[0].DB_MAX_OUTPUT_PORT_TYPE
+Pcount[1] <= Count[1].DB_MAX_OUTPUT_PORT_TYPE
+Pcount[2] <= Count[2].DB_MAX_OUTPUT_PORT_TYPE
+Pcount[3] <= Count[3].DB_MAX_OUTPUT_PORT_TYPE
+Pcount[4] <= Count[4].DB_MAX_OUTPUT_PORT_TYPE
+Pcount[5] <= Count[5].DB_MAX_OUTPUT_PORT_TYPE
+Pcount[6] <= Count[6].DB_MAX_OUTPUT_PORT_TYPE
+Pcount[7] <= Count[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

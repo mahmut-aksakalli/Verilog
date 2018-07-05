@@ -1,0 +1,34 @@
+|Exercise
+Clk => Clk.IN1
+nReset => nReset.IN1
+CntEn => CntEn.IN1
+Cout[0] <= BCDCounter:BCD1.port3
+Cout[1] <= BCDCounter:BCD1.port3
+Cout[2] <= BCDCounter:BCD1.port3
+Cout[3] <= BCDCounter:BCD1.port3
+NextEn <= BCDCounter:BCD1.port4
+
+
+|Exercise|BCDCounter:BCD1
+Clk => Next.CLK
+Clk => Counter[0].CLK
+Clk => Counter[1].CLK
+Clk => Counter[2].CLK
+Clk => Counter[3].CLK
+nReset => Counter[0].ACLR
+nReset => Counter[1].ACLR
+nReset => Counter[2].ACLR
+nReset => Counter[3].ACLR
+nReset => Next.ENA
+CntEn => Next.OUTPUTSELECT
+CntEn => Counter[3].ENA
+CntEn => Counter[2].ENA
+CntEn => Counter[1].ENA
+CntEn => Counter[0].ENA
+Cout[0] <= Counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Cout[1] <= Counter[1].DB_MAX_OUTPUT_PORT_TYPE
+Cout[2] <= Counter[2].DB_MAX_OUTPUT_PORT_TYPE
+Cout[3] <= Counter[3].DB_MAX_OUTPUT_PORT_TYPE
+NextEn <= Next.DB_MAX_OUTPUT_PORT_TYPE
+
+

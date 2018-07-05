@@ -1,0 +1,88 @@
+|SerialTxRx
+Clk => Clk.IN1
+Send => Send.IN1
+PDin[0] => PDin[0].IN1
+PDin[1] => PDin[1].IN1
+PDin[2] => PDin[2].IN1
+PDin[3] => PDin[3].IN1
+PDin[4] => PDin[4].IN1
+PDin[5] => PDin[5].IN1
+PDin[6] => PDin[6].IN1
+PDin[7] => PDin[7].IN1
+SCout <= SCout_.DB_MAX_OUTPUT_PORT_TYPE
+SDout <= SDout_.DB_MAX_OUTPUT_PORT_TYPE
+PDout[0] <= SerialRx4:Rx.port2
+PDout[1] <= SerialRx4:Rx.port2
+PDout[2] <= SerialRx4:Rx.port2
+PDout[3] <= SerialRx4:Rx.port2
+PDout[4] <= SerialRx4:Rx.port2
+PDout[5] <= SerialRx4:Rx.port2
+PDout[6] <= SerialRx4:Rx.port2
+PDout[7] <= SerialRx4:Rx.port2
+ready <= SerialRx4:Rx.port3
+ParErr <= SerialRx4:Rx.port4
+
+
+|SerialTxRx|SerialTx3:Tx
+Clk => Count[0].CLK
+Clk => Count[1].CLK
+Clk => Count[2].CLK
+Clk => Count[3].CLK
+Clk => Out.CLK
+Clk => parity.CLK
+Clk => SR[0].CLK
+Clk => SR[1].CLK
+Clk => SR[2].CLK
+Clk => SR[3].CLK
+Clk => SR[4].CLK
+Clk => SR[5].CLK
+Clk => SR[6].CLK
+Clk => SR[7].CLK
+Clk => Enable.CLK
+Clk => SCout.DATAIN
+Send => Send_en.OUTPUTSELECT
+PDin[0] => SR.DATAB
+PDin[1] => SR.DATAB
+PDin[2] => SR.DATAB
+PDin[3] => SR.DATAB
+PDin[4] => SR.DATAB
+PDin[5] => SR.DATAB
+PDin[6] => SR.DATAB
+PDin[7] => SR.DATAB
+SCout <= Clk.DB_MAX_OUTPUT_PORT_TYPE
+SDout <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SerialTxRx|SerialRx4:Rx
+Clk => parity.CLK
+Clk => SR[0].CLK
+Clk => SR[1].CLK
+Clk => SR[2].CLK
+Clk => SR[3].CLK
+Clk => SR[4].CLK
+Clk => SR[5].CLK
+Clk => SR[6].CLK
+Clk => SR[7].CLK
+Clk => Count[0].CLK
+Clk => Count[1].CLK
+Clk => Count[2].CLK
+Clk => Count[3].CLK
+Clk => ready.CLK
+Clk => Enable.CLK
+Clk => SDin_d1.CLK
+SDin => always1.IN1
+SDin => SDin_d1.DATAIN
+SDin => SR[0].DATAIN
+SDin => parity.DATAIN
+PDout[0] <= PDout[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+PDout[1] <= PDout[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+PDout[2] <= PDout[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+PDout[3] <= PDout[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+PDout[4] <= PDout[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+PDout[5] <= PDout[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+PDout[6] <= PDout[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+PDout[7] <= PDout[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+PDready <= ready.DB_MAX_OUTPUT_PORT_TYPE
+ParErr <= ParErr.DB_MAX_OUTPUT_PORT_TYPE
+
+

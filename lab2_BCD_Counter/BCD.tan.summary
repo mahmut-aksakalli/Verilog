@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.588 ns
+From           : UnD
+To             : BCD:BCD2|Counter[3]
+From Clock     : --
+To Clock       : Clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.147 ns
+From           : BCD:BCD2|Counter[3]
+To             : Co10[3]
+From Clock     : Clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.720 ns
+From           : nReset
+To             : BCD:BCD2|Next
+From Clock     : --
+To Clock       : Clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 171.85 MHz ( period = 5.819 ns )
+From           : BCD:BCD2|Counter[1]
+To             : BCD:BCD2|Counter[3]
+From Clock     : Clk
+To Clock       : Clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

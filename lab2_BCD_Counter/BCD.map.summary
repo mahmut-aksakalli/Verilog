@@ -1,0 +1,10 @@
+Analysis & Synthesis Status : Successful - Wed Apr 05 23:25:04 2017
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : BCD
+Top-level Entity Name : BCDCounter_3digit
+Family : Cyclone
+Total logic elements : 55
+Total pins : 16
+Total virtual pins : 0
+Total memory bits : 0
+Total PLLs : 0

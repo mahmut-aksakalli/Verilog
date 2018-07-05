@@ -1,0 +1,727 @@
+Classic Timing Analyzer report for Exp7_Top
+Thu May 18 14:24:14 2017
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'Clock'
+  7. tsu
+  8. tco
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                  ; To                    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 10.439 ns                        ; Sel2                  ; Reg8bit:R3|FFstore[0] ; --         ; Clock    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.515 ns                        ; Reg8bit:R2|FFstore[7] ; DioExt[7]             ; Clock      ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 16.757 ns                        ; Sel3                  ; DioExt[1]             ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -1.707 ns                        ; RnW3                  ; Reg8bit:R3|FFstore[7] ; --         ; Clock    ; 0            ;
+; Clock Setup: 'Clock'         ; N/A   ; None          ; 197.67 MHz ( period = 5.059 ns ) ; Reg8bit:R2|FFstore[7] ; Reg8bit:R3|FFstore[7] ; Clock      ; Clock    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                       ;                       ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+-----------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP1C3T144C8        ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'Clock'                                                                                                                                                                                               ;
++-------+------------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                  ; To                    ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 197.67 MHz ( period = 5.059 ns )               ; Reg8bit:R2|FFstore[7] ; Reg8bit:R3|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 4.798 ns                ;
+; N/A   ; 201.33 MHz ( period = 4.967 ns )               ; Reg8bit:R2|FFstore[7] ; Reg8bit:R1|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 4.706 ns                ;
+; N/A   ; 203.54 MHz ( period = 4.913 ns )               ; Reg8bit:R2|FFstore[0] ; Reg8bit:R3|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 4.642 ns                ;
+; N/A   ; 204.25 MHz ( period = 4.896 ns )               ; Reg8bit:R2|FFstore[2] ; Reg8bit:R3|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 4.625 ns                ;
+; N/A   ; 211.19 MHz ( period = 4.735 ns )               ; Reg8bit:R2|FFstore[2] ; Reg8bit:R1|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 4.474 ns                ;
+; N/A   ; 214.04 MHz ( period = 4.672 ns )               ; Reg8bit:R2|FFstore[1] ; Reg8bit:R3|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 4.401 ns                ;
+; N/A   ; 216.40 MHz ( period = 4.621 ns )               ; Reg8bit:R2|FFstore[6] ; Reg8bit:R3|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 4.360 ns                ;
+; N/A   ; 231.70 MHz ( period = 4.316 ns )               ; Reg8bit:R2|FFstore[0] ; Reg8bit:R1|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 4.055 ns                ;
+; N/A   ; 242.31 MHz ( period = 4.127 ns )               ; Reg8bit:R1|FFstore[7] ; Reg8bit:R3|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 3.866 ns                ;
+; N/A   ; 246.73 MHz ( period = 4.053 ns )               ; Reg8bit:R3|FFstore[7] ; Reg8bit:R3|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 3.792 ns                ;
+; N/A   ; 247.83 MHz ( period = 4.035 ns )               ; Reg8bit:R1|FFstore[7] ; Reg8bit:R1|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 3.774 ns                ;
+; N/A   ; 252.46 MHz ( period = 3.961 ns )               ; Reg8bit:R3|FFstore[7] ; Reg8bit:R1|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 3.700 ns                ;
+; N/A   ; 256.67 MHz ( period = 3.896 ns )               ; Reg8bit:R3|FFstore[0] ; Reg8bit:R3|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 3.635 ns                ;
+; N/A   ; 256.94 MHz ( period = 3.892 ns )               ; Reg8bit:R2|FFstore[7] ; Reg8bit:R2|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 3.631 ns                ;
+; N/A   ; 258.00 MHz ( period = 3.876 ns )               ; Reg8bit:R3|FFstore[2] ; Reg8bit:R3|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 3.615 ns                ;
+; N/A   ; 258.93 MHz ( period = 3.862 ns )               ; Reg8bit:R2|FFstore[1] ; Reg8bit:R1|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 3.601 ns                ;
+; N/A   ; 260.28 MHz ( period = 3.842 ns )               ; Reg8bit:R2|FFstore[5] ; Reg8bit:R3|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 3.581 ns                ;
+; N/A   ; 261.64 MHz ( period = 3.822 ns )               ; Reg8bit:R2|FFstore[6] ; Reg8bit:R1|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 3.561 ns                ;
+; N/A   ; 269.18 MHz ( period = 3.715 ns )               ; Reg8bit:R3|FFstore[2] ; Reg8bit:R1|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 3.464 ns                ;
+; N/A   ; 270.34 MHz ( period = 3.699 ns )               ; Reg8bit:R2|FFstore[2] ; Reg8bit:R2|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 3.438 ns                ;
+; N/A   ; 272.93 MHz ( period = 3.664 ns )               ; Reg8bit:R2|FFstore[0] ; Reg8bit:R2|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 3.403 ns                ;
+; N/A   ; 273.30 MHz ( period = 3.659 ns )               ; Reg8bit:R3|FFstore[1] ; Reg8bit:R3|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 3.398 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[3] ; Reg8bit:R1|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 3.374 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[6] ; Reg8bit:R3|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 3.367 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[2] ; Reg8bit:R3|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 3.312 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[5] ; Reg8bit:R1|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 3.307 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[0] ; Reg8bit:R3|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 3.289 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[1] ; Reg8bit:R2|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 3.232 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[6] ; Reg8bit:R2|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 3.199 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[2] ; Reg8bit:R1|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 3.161 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[4] ; Reg8bit:R3|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 3.151 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[0] ; Reg8bit:R1|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 3.048 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[3] ; Reg8bit:R1|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 3.028 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[4] ; Reg8bit:R3|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 2.963 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[5] ; Reg8bit:R2|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 2.944 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[4] ; Reg8bit:R3|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 2.893 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[6] ; Reg8bit:R3|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 2.878 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[3] ; Reg8bit:R3|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 2.851 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[1] ; Reg8bit:R3|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 2.767 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[3] ; Reg8bit:R1|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 2.771 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[4] ; Reg8bit:R1|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 2.754 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[0] ; Reg8bit:R1|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 2.702 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[7] ; Reg8bit:R2|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 2.699 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[7] ; Reg8bit:R2|FFstore[7] ; Clock      ; Clock    ; None                        ; None                      ; 2.625 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[1] ; Reg8bit:R1|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 2.598 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[5] ; Reg8bit:R3|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 2.586 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[6] ; Reg8bit:R1|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 2.568 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[4] ; Reg8bit:R1|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 2.566 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[5] ; Reg8bit:R3|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 2.561 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[3] ; Reg8bit:R3|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 2.505 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[4] ; Reg8bit:R1|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 2.496 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[2] ; Reg8bit:R2|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 2.428 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[0] ; Reg8bit:R2|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 2.396 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[5] ; Reg8bit:R1|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 2.312 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[5] ; Reg8bit:R1|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 2.287 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[3] ; Reg8bit:R3|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 2.248 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[1] ; Reg8bit:R2|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 2.229 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[3] ; Reg8bit:R2|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 2.208 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[6] ; Reg8bit:R2|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 2.206 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[2] ; Reg8bit:R2|FFstore[2] ; Clock      ; Clock    ; None                        ; None                      ; 2.125 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[4] ; Reg8bit:R2|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 2.100 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[6] ; Reg8bit:R1|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 2.079 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[0] ; Reg8bit:R2|FFstore[0] ; Clock      ; Clock    ; None                        ; None                      ; 2.050 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[1] ; Reg8bit:R1|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 1.967 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[5] ; Reg8bit:R2|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 1.949 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[5] ; Reg8bit:R2|FFstore[5] ; Clock      ; Clock    ; None                        ; None                      ; 1.924 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[4] ; Reg8bit:R2|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 1.912 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R2|FFstore[3] ; Reg8bit:R2|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 1.862 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[4] ; Reg8bit:R2|FFstore[4] ; Clock      ; Clock    ; None                        ; None                      ; 1.842 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[6] ; Reg8bit:R2|FFstore[6] ; Clock      ; Clock    ; None                        ; None                      ; 1.717 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R3|FFstore[3] ; Reg8bit:R2|FFstore[3] ; Clock      ; Clock    ; None                        ; None                      ; 1.605 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; Reg8bit:R1|FFstore[1] ; Reg8bit:R2|FFstore[1] ; Clock      ; Clock    ; None                        ; None                      ; 1.598 ns                ;
++-------+------------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------+
+; tsu                                                                              ;
++-------+--------------+------------+-----------+-----------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From      ; To                    ; To Clock ;
++-------+--------------+------------+-----------+-----------------------+----------+
+; N/A   ; None         ; 10.439 ns  ; Sel3      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 10.439 ns  ; Sel2      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 10.423 ns  ; Sel3      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 10.415 ns  ; Sel2      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 10.262 ns  ; Sel3      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 10.254 ns  ; Sel2      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 10.206 ns  ; Sel3      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 10.199 ns  ; Sel2      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 10.004 ns  ; Sel2      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 10.003 ns  ; Sel2      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 9.911 ns   ; Sel2      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 9.842 ns   ; Sel3      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 9.842 ns   ; Sel2      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 9.696 ns   ; Sel3      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 9.696 ns   ; Sel2      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 9.675 ns   ; Sel3      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 9.674 ns   ; Sel3      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 9.582 ns   ; Sel3      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 9.568 ns   ; Sel3      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 9.560 ns   ; Sel2      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 9.481 ns   ; Sel2      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 9.396 ns   ; Sel3      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 9.389 ns   ; Sel2      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 9.366 ns   ; Sel3      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 9.347 ns   ; RnW2      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 9.323 ns   ; RnW2      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 9.299 ns   ; Sel3      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 9.299 ns   ; Sel2      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 9.226 ns   ; Sel3      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 9.218 ns   ; Sel2      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 9.207 ns   ; Sel2      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 9.205 ns   ; Sel2      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 9.190 ns   ; Sel3      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 9.190 ns   ; Sel2      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 9.176 ns   ; RnW1      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 9.175 ns   ; RnW1      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 9.162 ns   ; RnW2      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 9.107 ns   ; RnW2      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 9.092 ns   ; Sel3      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 9.083 ns   ; RnW1      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 9.055 ns   ; Sel3      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 9.047 ns   ; Sel2      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 9.027 ns   ; Sel3      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 9.020 ns   ; Sel2      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 8.912 ns   ; RnW2      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 8.911 ns   ; RnW2      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 8.876 ns   ; Sel3      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 8.824 ns   ; RnW1      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 8.819 ns   ; RnW2      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 8.798 ns   ; Sel2      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 8.797 ns   ; Sel2      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 8.796 ns   ; Sel2      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 8.770 ns   ; RnW1      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 8.751 ns   ; RnW1      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 8.750 ns   ; RnW2      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 8.729 ns   ; Sel3      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 8.696 ns   ; RnW1      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 8.653 ns   ; RnW1      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 8.645 ns   ; Sel3      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 8.645 ns   ; Sel2      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 8.609 ns   ; RnW1      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 8.604 ns   ; RnW2      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 8.588 ns   ; RnW1      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 8.543 ns   ; Sel1      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 8.542 ns   ; Sel1      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 8.541 ns   ; DioExt[7] ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 8.469 ns   ; Sel3      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 8.468 ns   ; RnW2      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 8.467 ns   ; Sel3      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 8.450 ns   ; Sel1      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 8.449 ns   ; DioExt[7] ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 8.412 ns   ; Sel3      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 8.404 ns   ; Sel2      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 8.389 ns   ; RnW2      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 8.379 ns   ; RnW1      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 8.377 ns   ; RnW1      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 8.297 ns   ; RnW2      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 8.251 ns   ; DioExt[1] ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 8.227 ns   ; RnW1      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 8.207 ns   ; RnW2      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 8.191 ns   ; Sel1      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 8.191 ns   ; RnW1      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 8.183 ns   ; RnW1      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 8.137 ns   ; Sel1      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 8.126 ns   ; RnW2      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 8.118 ns   ; Sel1      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 8.115 ns   ; RnW2      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 8.113 ns   ; RnW2      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 8.098 ns   ; RnW2      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 8.064 ns   ; Sel1      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 8.064 ns   ; Sel1      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 8.064 ns   ; Sel1      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 8.064 ns   ; Sel1      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 8.020 ns   ; Sel1      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 7.970 ns   ; RnW1      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 7.969 ns   ; RnW1      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 7.968 ns   ; RnW1      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 7.955 ns   ; RnW2      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 7.955 ns   ; Sel1      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 7.941 ns   ; RnW1      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 7.928 ns   ; RnW2      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 7.802 ns   ; DioExt[2] ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 7.796 ns   ; Sel1      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 7.796 ns   ; Sel1      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 7.796 ns   ; Sel1      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 7.706 ns   ; RnW2      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 7.705 ns   ; RnW2      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 7.704 ns   ; RnW2      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 7.641 ns   ; DioExt[2] ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 7.553 ns   ; RnW2      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 7.550 ns   ; Sel1      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 7.545 ns   ; RnW1      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 7.543 ns   ; RnW1      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 7.542 ns   ; RnW1      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 7.510 ns   ; RnW1      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 7.507 ns   ; RnW1      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 7.441 ns   ; DioExt[1] ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 7.374 ns   ; DioExt[7] ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 7.357 ns   ; DioExt[4] ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 7.337 ns   ; Sel1      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 7.336 ns   ; Sel1      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 7.335 ns   ; Sel1      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 7.312 ns   ; RnW2      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 7.232 ns   ; DioExt[0] ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 7.072 ns   ; DioExt[1] ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 6.960 ns   ; DioExt[4] ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 6.912 ns   ; Sel1      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 6.910 ns   ; Sel1      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 6.909 ns   ; Sel1      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 6.877 ns   ; Sel1      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 6.874 ns   ; Sel1      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 6.827 ns   ; DioExt[6] ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 6.800 ns   ; DioExt[5] ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 6.635 ns   ; DioExt[0] ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 6.605 ns   ; DioExt[2] ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 6.526 ns   ; DioExt[5] ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 6.490 ns   ; DioExt[3] ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 6.306 ns   ; DioExt[4] ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 6.163 ns   ; DioExt[5] ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 6.028 ns   ; DioExt[6] ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 5.983 ns   ; DioExt[0] ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 5.977 ns   ; DioExt[3] ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 5.666 ns   ; DioExt[6] ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 5.624 ns   ; RnW3      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 5.608 ns   ; RnW3      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 5.447 ns   ; RnW3      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 5.391 ns   ; RnW3      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 5.334 ns   ; DioExt[3] ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 5.027 ns   ; RnW3      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 5.026 ns   ; RnW3      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 5.025 ns   ; RnW3      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 4.933 ns   ; RnW3      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 4.881 ns   ; RnW3      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 4.753 ns   ; RnW3      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 4.581 ns   ; RnW3      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 4.551 ns   ; RnW3      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 4.484 ns   ; RnW3      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 4.411 ns   ; RnW3      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A   ; None         ; 4.375 ns   ; RnW3      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A   ; None         ; 4.277 ns   ; RnW3      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 4.240 ns   ; RnW3      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A   ; None         ; 4.227 ns   ; RnW3      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 4.212 ns   ; RnW3      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A   ; None         ; 3.914 ns   ; RnW3      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A   ; None         ; 3.830 ns   ; RnW3      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A   ; None         ; 3.820 ns   ; RnW3      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A   ; None         ; 3.818 ns   ; RnW3      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A   ; None         ; 3.597 ns   ; RnW3      ; Reg8bit:R2|FFstore[3] ; Clock    ;
++-------+--------------+------------+-----------+-----------------------+----------+
+
+
++------------------------------------------------------------------------------------+
+; tco                                                                                ;
++-------+--------------+------------+-----------------------+-----------+------------+
+; Slack ; Required tco ; Actual tco ; From                  ; To        ; From Clock ;
++-------+--------------+------------+-----------------------+-----------+------------+
+; N/A   ; None         ; 11.515 ns  ; Reg8bit:R2|FFstore[7] ; DioExt[7] ; Clock      ;
+; N/A   ; None         ; 11.223 ns  ; Reg8bit:R2|FFstore[1] ; DioExt[1] ; Clock      ;
+; N/A   ; None         ; 11.010 ns  ; Reg8bit:R2|FFstore[2] ; DioExt[2] ; Clock      ;
+; N/A   ; None         ; 10.583 ns  ; Reg8bit:R1|FFstore[7] ; DioExt[7] ; Clock      ;
+; N/A   ; None         ; 10.509 ns  ; Reg8bit:R3|FFstore[7] ; DioExt[7] ; Clock      ;
+; N/A   ; None         ; 10.329 ns  ; Reg8bit:R2|FFstore[0] ; DioExt[0] ; Clock      ;
+; N/A   ; None         ; 10.210 ns  ; Reg8bit:R3|FFstore[1] ; DioExt[1] ; Clock      ;
+; N/A   ; None         ; 9.990 ns   ; Reg8bit:R3|FFstore[2] ; DioExt[2] ; Clock      ;
+; N/A   ; None         ; 9.965 ns   ; Reg8bit:R2|FFstore[6] ; DioExt[6] ; Clock      ;
+; N/A   ; None         ; 9.736 ns   ; Reg8bit:R2|FFstore[5] ; DioExt[5] ; Clock      ;
+; N/A   ; None         ; 9.697 ns   ; Reg8bit:R1|FFstore[2] ; DioExt[2] ; Clock      ;
+; N/A   ; None         ; 9.589 ns   ; Reg8bit:R1|FFstore[1] ; DioExt[1] ; Clock      ;
+; N/A   ; None         ; 9.312 ns   ; Reg8bit:R3|FFstore[0] ; DioExt[0] ; Clock      ;
+; N/A   ; None         ; 8.976 ns   ; Reg8bit:R1|FFstore[0] ; DioExt[0] ; Clock      ;
+; N/A   ; None         ; 8.972 ns   ; Reg8bit:R3|FFstore[6] ; DioExt[6] ; Clock      ;
+; N/A   ; None         ; 8.862 ns   ; Reg8bit:R2|FFstore[4] ; DioExt[4] ; Clock      ;
+; N/A   ; None         ; 8.741 ns   ; Reg8bit:R1|FFstore[5] ; DioExt[5] ; Clock      ;
+; N/A   ; None         ; 8.716 ns   ; Reg8bit:R3|FFstore[5] ; DioExt[5] ; Clock      ;
+; N/A   ; None         ; 8.674 ns   ; Reg8bit:R1|FFstore[4] ; DioExt[4] ; Clock      ;
+; N/A   ; None         ; 8.604 ns   ; Reg8bit:R3|FFstore[4] ; DioExt[4] ; Clock      ;
+; N/A   ; None         ; 8.483 ns   ; Reg8bit:R1|FFstore[6] ; DioExt[6] ; Clock      ;
+; N/A   ; None         ; 8.460 ns   ; Reg8bit:R1|FFstore[3] ; DioExt[3] ; Clock      ;
+; N/A   ; None         ; 8.104 ns   ; Reg8bit:R2|FFstore[3] ; DioExt[3] ; Clock      ;
+; N/A   ; None         ; 7.847 ns   ; Reg8bit:R3|FFstore[3] ; DioExt[3] ; Clock      ;
++-------+--------------+------------+-----------------------+-----------+------------+
+
+
++---------------------------------------------------------------------+
+; tpd                                                                 ;
++-------+-------------------+-----------------+-----------+-----------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From      ; To        ;
++-------+-------------------+-----------------+-----------+-----------+
+; N/A   ; None              ; 16.757 ns       ; Sel3      ; DioExt[1] ;
+; N/A   ; None              ; 16.750 ns       ; Sel2      ; DioExt[1] ;
+; N/A   ; None              ; 16.537 ns       ; Sel3      ; DioExt[2] ;
+; N/A   ; None              ; 16.529 ns       ; Sel2      ; DioExt[2] ;
+; N/A   ; None              ; 16.336 ns       ; Sel2      ; DioExt[7] ;
+; N/A   ; None              ; 16.009 ns       ; Sel3      ; DioExt[7] ;
+; N/A   ; None              ; 15.855 ns       ; Sel2      ; DioExt[0] ;
+; N/A   ; None              ; 15.855 ns       ; Sel3      ; DioExt[0] ;
+; N/A   ; None              ; 15.658 ns       ; RnW2      ; DioExt[1] ;
+; N/A   ; None              ; 15.437 ns       ; RnW2      ; DioExt[2] ;
+; N/A   ; None              ; 15.314 ns       ; RnW1      ; DioExt[7] ;
+; N/A   ; None              ; 15.260 ns       ; Sel3      ; DioExt[5] ;
+; N/A   ; None              ; 15.256 ns       ; Sel2      ; DioExt[5] ;
+; N/A   ; None              ; 15.244 ns       ; RnW2      ; DioExt[7] ;
+; N/A   ; None              ; 15.146 ns       ; Sel2      ; DioExt[4] ;
+; N/A   ; None              ; 15.146 ns       ; Sel3      ; DioExt[4] ;
+; N/A   ; None              ; 15.060 ns       ; RnW1      ; DioExt[1] ;
+; N/A   ; None              ; 14.997 ns       ; DioExt[7] ; DioExt[7] ;
+; N/A   ; None              ; 14.802 ns       ; DioExt[1] ; DioExt[1] ;
+; N/A   ; None              ; 14.798 ns       ; Sel2      ; DioExt[6] ;
+; N/A   ; None              ; 14.763 ns       ; RnW2      ; DioExt[0] ;
+; N/A   ; None              ; 14.722 ns       ; Sel1      ; DioExt[7] ;
+; N/A   ; None              ; 14.668 ns       ; Sel1      ; DioExt[1] ;
+; N/A   ; None              ; 14.655 ns       ; RnW1      ; DioExt[2] ;
+; N/A   ; None              ; 14.470 ns       ; Sel3      ; DioExt[6] ;
+; N/A   ; None              ; 14.393 ns       ; Sel3      ; DioExt[3] ;
+; N/A   ; None              ; 14.385 ns       ; Sel2      ; DioExt[3] ;
+; N/A   ; None              ; 14.164 ns       ; RnW2      ; DioExt[5] ;
+; N/A   ; None              ; 14.054 ns       ; RnW2      ; DioExt[4] ;
+; N/A   ; None              ; 13.930 ns       ; RnW1      ; DioExt[0] ;
+; N/A   ; None              ; 13.916 ns       ; DioExt[2] ; DioExt[2] ;
+; N/A   ; None              ; 13.812 ns       ; RnW1      ; DioExt[4] ;
+; N/A   ; None              ; 13.804 ns       ; Sel1      ; DioExt[2] ;
+; N/A   ; None              ; 13.765 ns       ; RnW1      ; DioExt[6] ;
+; N/A   ; None              ; 13.745 ns       ; RnW1      ; DioExt[5] ;
+; N/A   ; None              ; 13.706 ns       ; RnW2      ; DioExt[6] ;
+; N/A   ; None              ; 13.342 ns       ; RnW1      ; DioExt[3] ;
+; N/A   ; None              ; 13.293 ns       ; RnW2      ; DioExt[3] ;
+; N/A   ; None              ; 13.089 ns       ; Sel1      ; DioExt[0] ;
+; N/A   ; None              ; 12.871 ns       ; Sel1      ; DioExt[5] ;
+; N/A   ; None              ; 12.810 ns       ; Sel1      ; DioExt[4] ;
+; N/A   ; None              ; 12.807 ns       ; DioExt[4] ; DioExt[4] ;
+; N/A   ; None              ; 12.694 ns       ; DioExt[5] ; DioExt[5] ;
+; N/A   ; None              ; 12.648 ns       ; DioExt[0] ; DioExt[0] ;
+; N/A   ; None              ; 12.619 ns       ; Sel1      ; DioExt[6] ;
+; N/A   ; None              ; 12.565 ns       ; Sel1      ; DioExt[3] ;
+; N/A   ; None              ; 12.171 ns       ; DioExt[6] ; DioExt[6] ;
+; N/A   ; None              ; 11.942 ns       ; RnW3      ; DioExt[1] ;
+; N/A   ; None              ; 11.722 ns       ; RnW3      ; DioExt[2] ;
+; N/A   ; None              ; 11.315 ns       ; DioExt[3] ; DioExt[3] ;
+; N/A   ; None              ; 11.194 ns       ; RnW3      ; DioExt[7] ;
+; N/A   ; None              ; 11.040 ns       ; RnW3      ; DioExt[0] ;
+; N/A   ; None              ; 10.445 ns       ; RnW3      ; DioExt[5] ;
+; N/A   ; None              ; 10.331 ns       ; RnW3      ; DioExt[4] ;
+; N/A   ; None              ; 9.655 ns        ; RnW3      ; DioExt[6] ;
+; N/A   ; None              ; 9.578 ns        ; RnW3      ; DioExt[3] ;
++-------+-------------------+-----------------+-----------+-----------+
+
+
++----------------------------------------------------------------------------------------+
+; th                                                                                     ;
++---------------+-------------+-----------+-----------+-----------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From      ; To                    ; To Clock ;
++---------------+-------------+-----------+-----------+-----------------------+----------+
+; N/A           ; None        ; -1.707 ns ; RnW3      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -1.707 ns ; RnW3      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -2.869 ns ; RnW3      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -2.901 ns ; RnW3      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -2.911 ns ; RnW3      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -2.911 ns ; RnW3      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -2.911 ns ; RnW3      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -2.911 ns ; RnW3      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -2.911 ns ; RnW3      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -2.911 ns ; RnW3      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -3.012 ns ; RnW3      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -3.058 ns ; RnW3      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -3.063 ns ; RnW3      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -3.109 ns ; RnW3      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -3.142 ns ; RnW3      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -3.270 ns ; RnW3      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -3.375 ns ; RnW3      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -3.420 ns ; RnW3      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -3.489 ns ; RnW3      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -3.715 ns ; RnW3      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -3.763 ns ; RnW3      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -4.025 ns ; RnW3      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -4.178 ns ; RnW3      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -4.564 ns ; RnW3      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -5.282 ns ; DioExt[3] ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -5.614 ns ; DioExt[6] ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -5.920 ns ; Sel1      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -5.925 ns ; DioExt[3] ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -5.931 ns ; DioExt[0] ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -5.976 ns ; DioExt[6] ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -6.062 ns ; Sel1      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -6.111 ns ; DioExt[5] ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.254 ns ; DioExt[4] ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -6.257 ns ; Sel1      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -6.288 ns ; Sel1      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.289 ns ; Sel1      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -6.335 ns ; RnW1      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -6.372 ns ; Sel1      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -6.415 ns ; RnW2      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.415 ns ; RnW2      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -6.415 ns ; RnW2      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -6.424 ns ; Sel1      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -6.437 ns ; RnW2      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -6.437 ns ; RnW2      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -6.437 ns ; RnW2      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -6.438 ns ; DioExt[3] ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -6.441 ns ; Sel1      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -6.474 ns ; DioExt[5] ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.476 ns ; RnW2      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -6.521 ns ; Sel3      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -6.521 ns ; Sel3      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -6.528 ns ; RnW1      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -6.532 ns ; Sel1      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -6.553 ns ; DioExt[2] ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -6.555 ns ; RnW1      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.583 ns ; DioExt[0] ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -6.638 ns ; RnW1      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -6.638 ns ; RnW1      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.638 ns ; RnW1      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -6.638 ns ; RnW1      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -6.651 ns ; Sel1      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.693 ns ; RnW1      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -6.716 ns ; RnW2      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -6.748 ns ; DioExt[5] ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.775 ns ; DioExt[6] ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -6.877 ns ; RnW2      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -6.906 ns ; RnW1      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -6.906 ns ; RnW1      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -6.906 ns ; RnW1      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -6.906 ns ; RnW1      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -6.908 ns ; DioExt[4] ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -6.911 ns ; Sel1      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -6.925 ns ; Sel1      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.982 ns ; RnW2      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -6.986 ns ; RnW1      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.019 ns ; RnW1      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.020 ns ; DioExt[1] ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -7.021 ns ; RnW1      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -7.024 ns ; Sel1      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -7.027 ns ; RnW2      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -7.047 ns ; Sel1      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -7.099 ns ; Sel1      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -7.119 ns ; RnW2      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.175 ns ; Sel1      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.180 ns ; DioExt[0] ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -7.192 ns ; RnW1      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -7.223 ns ; Sel1      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -7.256 ns ; RnW2      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -7.305 ns ; DioExt[4] ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -7.308 ns ; Sel1      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -7.321 ns ; RnW1      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -7.322 ns ; DioExt[7] ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -7.322 ns ; RnW2      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -7.370 ns ; RnW2      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -7.389 ns ; DioExt[1] ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -7.477 ns ; Sel1      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.496 ns ; RnW1      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -7.504 ns ; Sel2      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -7.504 ns ; Sel2      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -7.504 ns ; Sel2      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -7.526 ns ; Sel2      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -7.526 ns ; Sel2      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -7.526 ns ; Sel2      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.579 ns ; RnW1      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -7.589 ns ; DioExt[2] ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.621 ns ; Sel1      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -7.632 ns ; RnW2      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.638 ns ; Sel1      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.659 ns ; RnW1      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.687 ns ; RnW2      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -7.688 ns ; Sel1      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.725 ns ; Sel3      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -7.725 ns ; Sel3      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -7.725 ns ; Sel3      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.725 ns ; Sel3      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.725 ns ; Sel3      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -7.725 ns ; Sel3      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -7.744 ns ; Sel1      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -7.750 ns ; DioExt[2] ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.767 ns ; RnW2      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -7.785 ns ; RnW2      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.826 ns ; RnW2      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -7.827 ns ; Sel2      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.827 ns ; Sel2      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -7.872 ns ; RnW1      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -7.913 ns ; Sel3      ; Reg8bit:R2|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -7.919 ns ; RnW2      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -7.946 ns ; RnW2      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.954 ns ; Sel3      ; Reg8bit:R2|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -7.957 ns ; Sel3      ; Reg8bit:R2|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -7.989 ns ; Sel3      ; Reg8bit:R2|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -7.990 ns ; Sel3      ; Reg8bit:R2|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -7.992 ns ; Sel3      ; Reg8bit:R2|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -8.171 ns ; RnW2      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -8.199 ns ; DioExt[1] ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -8.214 ns ; Sel1      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -8.246 ns ; RnW1      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -8.263 ns ; RnW2      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -8.275 ns ; Sel3      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -8.300 ns ; RnW1      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -8.334 ns ; Sel3      ; Reg8bit:R2|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -8.388 ns ; Sel3      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -8.397 ns ; DioExt[7] ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -8.416 ns ; Sel3      ; Reg8bit:R2|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -8.488 ns ; RnW1      ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -8.489 ns ; DioExt[7] ; Reg8bit:R3|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -8.603 ns ; Sel2      ; Reg8bit:R1|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -8.638 ns ; Sel3      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -8.674 ns ; Sel3      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -8.717 ns ; Sel2      ; Reg8bit:R1|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -8.826 ns ; Sel3      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -8.959 ns ; Sel2      ; Reg8bit:R3|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -8.967 ns ; Sel2      ; Reg8bit:R1|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -9.003 ns ; Sel2      ; Reg8bit:R1|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -9.036 ns ; Sel2      ; Reg8bit:R1|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -9.056 ns ; Sel3      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -9.143 ns ; Sel3      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -9.310 ns ; Sel2      ; Reg8bit:R3|FFstore[5] ; Clock    ;
+; N/A           ; None        ; -9.364 ns ; Sel2      ; Reg8bit:R3|FFstore[4] ; Clock    ;
+; N/A           ; None        ; -9.385 ns ; Sel2      ; Reg8bit:R1|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -9.402 ns ; Sel2      ; Reg8bit:R3|FFstore[6] ; Clock    ;
+; N/A           ; None        ; -9.409 ns ; Sel3      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -9.472 ns ; Sel2      ; Reg8bit:R1|FFstore[3] ; Clock    ;
+; N/A           ; None        ; -9.527 ns ; Sel2      ; Reg8bit:R3|FFstore[1] ; Clock    ;
+; N/A           ; None        ; -9.546 ns ; Sel2      ; Reg8bit:R3|FFstore[2] ; Clock    ;
+; N/A           ; None        ; -9.600 ns ; Sel2      ; Reg8bit:R3|FFstore[0] ; Clock    ;
+; N/A           ; None        ; -9.736 ns ; Sel2      ; Reg8bit:R1|FFstore[7] ; Clock    ;
+; N/A           ; None        ; -9.828 ns ; Sel2      ; Reg8bit:R3|FFstore[7] ; Clock    ;
++---------------+-------------+-----------+-----------+-----------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Thu May 18 14:24:14 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Exp7_Top -c Exp7_Top --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Clock" is an undefined clock
+Info: Clock "Clock" has Internal fmax of 197.67 MHz between source register "Reg8bit:R2|FFstore[7]" and destination register "Reg8bit:R3|FFstore[7]" (period= 5.059 ns)
+    Info: + Longest register to register delay is 4.798 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y5_N4; Fanout = 1; REG Node = 'Reg8bit:R2|FFstore[7]'
+        Info: 2: + IC(1.270 ns) + CELL(0.114 ns) = 1.384 ns; Loc. = LC_X9_Y4_N0; Fanout = 1; COMB Node = 'Dbus[7]~16'
+        Info: 3: + IC(1.213 ns) + CELL(0.114 ns) = 2.711 ns; Loc. = LC_X9_Y5_N7; Fanout = 3; COMB Node = 'Dbus[7]~17'
+        Info: 4: + IC(0.442 ns) + CELL(0.292 ns) = 3.445 ns; Loc. = LC_X9_Y5_N4; Fanout = 2; COMB Node = 'Dbus[7]~26'
+        Info: 5: + IC(1.238 ns) + CELL(0.115 ns) = 4.798 ns; Loc. = LC_X9_Y4_N0; Fanout = 1; REG Node = 'Reg8bit:R3|FFstore[7]'
+        Info: Total cell delay = 0.635 ns ( 13.23 % )
+        Info: Total interconnect delay = 4.163 ns ( 86.77 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "Clock" to destination register is 2.730 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 24; CLK Node = 'Clock'
+            Info: 2: + IC(0.550 ns) + CELL(0.711 ns) = 2.730 ns; Loc. = LC_X9_Y4_N0; Fanout = 1; REG Node = 'Reg8bit:R3|FFstore[7]'
+            Info: Total cell delay = 2.180 ns ( 79.85 % )
+            Info: Total interconnect delay = 0.550 ns ( 20.15 % )
+        Info: - Longest clock path from clock "Clock" to source register is 2.730 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 24; CLK Node = 'Clock'
+            Info: 2: + IC(0.550 ns) + CELL(0.711 ns) = 2.730 ns; Loc. = LC_X9_Y5_N4; Fanout = 1; REG Node = 'Reg8bit:R2|FFstore[7]'
+            Info: Total cell delay = 2.180 ns ( 79.85 % )
+            Info: Total interconnect delay = 0.550 ns ( 20.15 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Micro setup delay of destination is 0.037 ns
+Info: tsu for register "Reg8bit:R3|FFstore[0]" (data pin = "Sel3", clock pin = "Clock") is 10.439 ns
+    Info: + Longest pin to register delay is 13.132 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_26; Fanout = 2; PIN Node = 'Sel3'
+        Info: 2: + IC(6.027 ns) + CELL(0.442 ns) = 7.938 ns; Loc. = LC_X9_Y4_N8; Fanout = 10; COMB Node = 'Reg8bit:R3|Dio~0'
+        Info: 3: + IC(1.347 ns) + CELL(0.590 ns) = 9.875 ns; Loc. = LC_X10_Y5_N4; Fanout = 1; COMB Node = 'Dbus[0]~0'
+        Info: 4: + IC(1.255 ns) + CELL(0.114 ns) = 11.244 ns; Loc. = LC_X10_Y6_N4; Fanout = 3; COMB Node = 'Dbus[0]~2'
+        Info: 5: + IC(0.340 ns) + CELL(0.114 ns) = 11.698 ns; Loc. = LC_X10_Y6_N5; Fanout = 2; COMB Node = 'Dbus[0]~19'
+        Info: 6: + IC(1.319 ns) + CELL(0.115 ns) = 13.132 ns; Loc. = LC_X10_Y5_N4; Fanout = 1; REG Node = 'Reg8bit:R3|FFstore[0]'
+        Info: Total cell delay = 2.844 ns ( 21.66 % )
+        Info: Total interconnect delay = 10.288 ns ( 78.34 % )
+    Info: + Micro setup delay of destination is 0.037 ns
+    Info: - Shortest clock path from clock "Clock" to destination register is 2.730 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 24; CLK Node = 'Clock'
+        Info: 2: + IC(0.550 ns) + CELL(0.711 ns) = 2.730 ns; Loc. = LC_X10_Y5_N4; Fanout = 1; REG Node = 'Reg8bit:R3|FFstore[0]'
+        Info: Total cell delay = 2.180 ns ( 79.85 % )
+        Info: Total interconnect delay = 0.550 ns ( 20.15 % )
+Info: tco from clock "Clock" to destination pin "DioExt[7]" through register "Reg8bit:R2|FFstore[7]" is 11.515 ns
+    Info: + Longest clock path from clock "Clock" to source register is 2.730 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 24; CLK Node = 'Clock'
+        Info: 2: + IC(0.550 ns) + CELL(0.711 ns) = 2.730 ns; Loc. = LC_X9_Y5_N4; Fanout = 1; REG Node = 'Reg8bit:R2|FFstore[7]'
+        Info: Total cell delay = 2.180 ns ( 79.85 % )
+        Info: Total interconnect delay = 0.550 ns ( 20.15 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Longest register to pin delay is 8.561 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y5_N4; Fanout = 1; REG Node = 'Reg8bit:R2|FFstore[7]'
+        Info: 2: + IC(1.270 ns) + CELL(0.114 ns) = 1.384 ns; Loc. = LC_X9_Y4_N0; Fanout = 1; COMB Node = 'Dbus[7]~16'
+        Info: 3: + IC(1.213 ns) + CELL(0.114 ns) = 2.711 ns; Loc. = LC_X9_Y5_N7; Fanout = 3; COMB Node = 'Dbus[7]~17'
+        Info: 4: + IC(3.726 ns) + CELL(2.124 ns) = 8.561 ns; Loc. = PIN_107; Fanout = 0; PIN Node = 'DioExt[7]'
+        Info: Total cell delay = 2.352 ns ( 27.47 % )
+        Info: Total interconnect delay = 6.209 ns ( 72.53 % )
+Info: Longest tpd from source pin "Sel3" to destination pin "DioExt[1]" is 16.757 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_26; Fanout = 2; PIN Node = 'Sel3'
+    Info: 2: + IC(6.027 ns) + CELL(0.442 ns) = 7.938 ns; Loc. = LC_X9_Y4_N8; Fanout = 10; COMB Node = 'Reg8bit:R3|Dio~0'
+    Info: 3: + IC(1.351 ns) + CELL(0.590 ns) = 9.879 ns; Loc. = LC_X10_Y5_N5; Fanout = 1; COMB Node = 'Dbus[1]~4'
+    Info: 4: + IC(1.246 ns) + CELL(0.114 ns) = 11.239 ns; Loc. = LC_X10_Y6_N6; Fanout = 3; COMB Node = 'Dbus[1]~5'
+    Info: 5: + IC(3.394 ns) + CELL(2.124 ns) = 16.757 ns; Loc. = PIN_106; Fanout = 0; PIN Node = 'DioExt[1]'
+    Info: Total cell delay = 4.739 ns ( 28.28 % )
+    Info: Total interconnect delay = 12.018 ns ( 71.72 % )
+Info: th for register "Reg8bit:R3|FFstore[6]" (data pin = "RnW3", clock pin = "Clock") is -1.707 ns
+    Info: + Longest clock path from clock "Clock" to destination register is 2.730 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 24; CLK Node = 'Clock'
+        Info: 2: + IC(0.550 ns) + CELL(0.711 ns) = 2.730 ns; Loc. = LC_X9_Y4_N2; Fanout = 1; REG Node = 'Reg8bit:R3|FFstore[6]'
+        Info: Total cell delay = 2.180 ns ( 79.85 % )
+        Info: Total interconnect delay = 0.550 ns ( 20.15 % )
+    Info: + Micro hold delay of destination is 0.015 ns
+    Info: - Shortest pin to register delay is 4.452 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_16; Fanout = 3; PIN Node = 'RnW3'
+        Info: 2: + IC(1.364 ns) + CELL(0.292 ns) = 3.125 ns; Loc. = LC_X9_Y4_N1; Fanout = 8; COMB Node = 'Reg8bit:R3|FFstore[0]~0'
+        Info: 3: + IC(0.460 ns) + CELL(0.867 ns) = 4.452 ns; Loc. = LC_X9_Y4_N2; Fanout = 1; REG Node = 'Reg8bit:R3|FFstore[6]'
+        Info: Total cell delay = 2.628 ns ( 59.03 % )
+        Info: Total interconnect delay = 1.824 ns ( 40.97 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 205 megabytes
+    Info: Processing ended: Thu May 18 14:24:14 2017
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

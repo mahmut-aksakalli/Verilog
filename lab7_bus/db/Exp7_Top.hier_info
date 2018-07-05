@@ -1,0 +1,129 @@
+|Exp7Top
+Clock => Clock.IN3
+Sel1 => Sel1.IN1
+RnW1 => RnW1.IN1
+Sel2 => Sel2.IN1
+RnW2 => RnW2.IN1
+Sel3 => Sel3.IN1
+RnW3 => RnW3.IN1
+DioExt[0] <> DioExt[0]
+DioExt[1] <> DioExt[1]
+DioExt[2] <> DioExt[2]
+DioExt[3] <> DioExt[3]
+DioExt[4] <> DioExt[4]
+DioExt[5] <> DioExt[5]
+DioExt[6] <> DioExt[6]
+DioExt[7] <> DioExt[7]
+
+
+|Exp7Top|Reg8bit:R1
+Clk => FFstore[0].CLK
+Clk => FFstore[1].CLK
+Clk => FFstore[2].CLK
+Clk => FFstore[3].CLK
+Clk => FFstore[4].CLK
+Clk => FFstore[5].CLK
+Clk => FFstore[6].CLK
+Clk => FFstore[7].CLK
+Sel => Dio.IN0
+Sel => FFstore[0].ENA
+Sel => FFstore[1].ENA
+Sel => FFstore[2].ENA
+Sel => FFstore[3].ENA
+Sel => FFstore[4].ENA
+Sel => FFstore[5].ENA
+Sel => FFstore[6].ENA
+Sel => FFstore[7].ENA
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => Dio.IN1
+Dio[0] <> Dio[0]
+Dio[1] <> Dio[1]
+Dio[2] <> Dio[2]
+Dio[3] <> Dio[3]
+Dio[4] <> Dio[4]
+Dio[5] <> Dio[5]
+Dio[6] <> Dio[6]
+Dio[7] <> Dio[7]
+
+
+|Exp7Top|Reg8bit:R2
+Clk => FFstore[0].CLK
+Clk => FFstore[1].CLK
+Clk => FFstore[2].CLK
+Clk => FFstore[3].CLK
+Clk => FFstore[4].CLK
+Clk => FFstore[5].CLK
+Clk => FFstore[6].CLK
+Clk => FFstore[7].CLK
+Sel => Dio.IN0
+Sel => FFstore[0].ENA
+Sel => FFstore[1].ENA
+Sel => FFstore[2].ENA
+Sel => FFstore[3].ENA
+Sel => FFstore[4].ENA
+Sel => FFstore[5].ENA
+Sel => FFstore[6].ENA
+Sel => FFstore[7].ENA
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => Dio.IN1
+Dio[0] <> Dio[0]
+Dio[1] <> Dio[1]
+Dio[2] <> Dio[2]
+Dio[3] <> Dio[3]
+Dio[4] <> Dio[4]
+Dio[5] <> Dio[5]
+Dio[6] <> Dio[6]
+Dio[7] <> Dio[7]
+
+
+|Exp7Top|Reg8bit:R3
+Clk => FFstore[0].CLK
+Clk => FFstore[1].CLK
+Clk => FFstore[2].CLK
+Clk => FFstore[3].CLK
+Clk => FFstore[4].CLK
+Clk => FFstore[5].CLK
+Clk => FFstore[6].CLK
+Clk => FFstore[7].CLK
+Sel => Dio.IN0
+Sel => FFstore[0].ENA
+Sel => FFstore[1].ENA
+Sel => FFstore[2].ENA
+Sel => FFstore[3].ENA
+Sel => FFstore[4].ENA
+Sel => FFstore[5].ENA
+Sel => FFstore[6].ENA
+Sel => FFstore[7].ENA
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => FFstore.OUTPUTSELECT
+RnW => Dio.IN1
+Dio[0] <> Dio[0]
+Dio[1] <> Dio[1]
+Dio[2] <> Dio[2]
+Dio[3] <> Dio[3]
+Dio[4] <> Dio[4]
+Dio[5] <> Dio[5]
+Dio[6] <> Dio[6]
+Dio[7] <> Dio[7]
+
+

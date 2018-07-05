@@ -1,0 +1,103 @@
+|BCDCounter_3digit
+Clk => Clk.IN3
+nReset => nReset.IN3
+Enable => Enable.IN1
+UnD => UnD.IN3
+Co1[0] <= BCD:BCD1.port4
+Co1[1] <= BCD:BCD1.port4
+Co1[2] <= BCD:BCD1.port4
+Co1[3] <= BCD:BCD1.port4
+Co10[0] <= BCD:BCD2.port4
+Co10[1] <= BCD:BCD2.port4
+Co10[2] <= BCD:BCD2.port4
+Co10[3] <= BCD:BCD2.port4
+Co100[0] <= BCD:BCD3.port4
+Co100[1] <= BCD:BCD3.port4
+Co100[2] <= BCD:BCD3.port4
+Co100[3] <= BCD:BCD3.port4
+
+
+|BCDCounter_3digit|BCD:BCD1
+Clk => Next.CLK
+Clk => Counter[0].CLK
+Clk => Counter[1].CLK
+Clk => Counter[2].CLK
+Clk => Counter[3].CLK
+nReset => Counter[0].ACLR
+nReset => Counter[1].ACLR
+nReset => Counter[2].ACLR
+nReset => Counter[3].ACLR
+nReset => Next.ENA
+CntEn => Next.OUTPUTSELECT
+CntEn => Counter[3].ENA
+CntEn => Counter[2].ENA
+CntEn => Counter[1].ENA
+CntEn => Counter[0].ENA
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Next.OUTPUTSELECT
+Cout[0] <= Counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Cout[1] <= Counter[1].DB_MAX_OUTPUT_PORT_TYPE
+Cout[2] <= Counter[2].DB_MAX_OUTPUT_PORT_TYPE
+Cout[3] <= Counter[3].DB_MAX_OUTPUT_PORT_TYPE
+NextEn <= Next.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDCounter_3digit|BCD:BCD2
+Clk => Next.CLK
+Clk => Counter[0].CLK
+Clk => Counter[1].CLK
+Clk => Counter[2].CLK
+Clk => Counter[3].CLK
+nReset => Counter[0].ACLR
+nReset => Counter[1].ACLR
+nReset => Counter[2].ACLR
+nReset => Counter[3].ACLR
+nReset => Next.ENA
+CntEn => Next.OUTPUTSELECT
+CntEn => Counter[3].ENA
+CntEn => Counter[2].ENA
+CntEn => Counter[1].ENA
+CntEn => Counter[0].ENA
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Next.OUTPUTSELECT
+Cout[0] <= Counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Cout[1] <= Counter[1].DB_MAX_OUTPUT_PORT_TYPE
+Cout[2] <= Counter[2].DB_MAX_OUTPUT_PORT_TYPE
+Cout[3] <= Counter[3].DB_MAX_OUTPUT_PORT_TYPE
+NextEn <= Next.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCDCounter_3digit|BCD:BCD3
+Clk => Next.CLK
+Clk => Counter[0].CLK
+Clk => Counter[1].CLK
+Clk => Counter[2].CLK
+Clk => Counter[3].CLK
+nReset => Counter[0].ACLR
+nReset => Counter[1].ACLR
+nReset => Counter[2].ACLR
+nReset => Counter[3].ACLR
+nReset => Next.ENA
+CntEn => Next.OUTPUTSELECT
+CntEn => Counter[3].ENA
+CntEn => Counter[2].ENA
+CntEn => Counter[1].ENA
+CntEn => Counter[0].ENA
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Counter.OUTPUTSELECT
+UnD => Next.OUTPUTSELECT
+Cout[0] <= Counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Cout[1] <= Counter[1].DB_MAX_OUTPUT_PORT_TYPE
+Cout[2] <= Counter[2].DB_MAX_OUTPUT_PORT_TYPE
+Cout[3] <= Counter[3].DB_MAX_OUTPUT_PORT_TYPE
+NextEn <= Next.DB_MAX_OUTPUT_PORT_TYPE
+
+
